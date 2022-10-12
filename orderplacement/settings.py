@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ydm#60ov%++%%(iid@v2a$1hbfb=n*6b^)+3(i8&i7j(t4f&-s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -136,6 +136,6 @@ AUTH_USER_MODEL = 'orderplacementapi.CustomUser'
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
-]
+# CORS_ORIGIN_WHITELIST = [
+#     'http://localhost:3000',
+# ]
