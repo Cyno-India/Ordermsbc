@@ -1,2 +1,1 @@
-heroku ps:scale web=1
-web: gunicorn orderplacement.wsgi
+web gunicorn orderplacement.wsgi:application --log-file -

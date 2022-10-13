@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -140,6 +142,10 @@ CORS_ALLOW_CREDENTIALS = True
 #     'http://localhost:3000',
 # ]
 import os
-DEBUG_COLLECTSTATIC=1
-STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
+# DEBUG_COLLECTSTATIC=1
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),) 
+STATIC_URL = '/static/'
+
+django_heroku.setting(locals())
