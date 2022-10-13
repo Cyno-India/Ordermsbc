@@ -1,1 +1,1 @@
-web gunicorn orderplacement.wsgi:application --log-file -
+web: gunicorn orderplacement.wsgi --log-file -
