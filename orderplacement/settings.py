@@ -139,4 +139,7 @@ CORS_ALLOW_CREDENTIALS = True
 # CORS_ORIGIN_WHITELIST = [
 #     'http://localhost:3000',
 # ]
+import os
 DEBUG_COLLECTSTATIC=1
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
+STATIC_URL = '/static/'
