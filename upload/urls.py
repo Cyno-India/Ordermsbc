@@ -1,6 +1,5 @@
 from rest_framework.routers import SimpleRouter
 from .views import DropBoxViewset
-from turtle import home
 from django.urls import re_path
 from .views import *
 # router = SimpleRouter()
