@@ -5,6 +5,7 @@ urlpatterns = [
     re_path(r'adminregister', AdminRegisterView.as_view()),
     re_path(r'Adminview', AdminView.as_view()),
     # re_path(r'Adminview', AdminViewPortal.as_view()),
+    re_path(r'cookie', getcookie.as_view(), name='get'),
 
     re_path(r'login', LoginView.as_view(), name='login'),
     re_path(r'logout', LogoutView.as_view(), name='logout'),

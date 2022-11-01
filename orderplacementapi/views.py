@@ -1,7 +1,7 @@
 from urllib import request
 from django.shortcuts import render
 from rest_framework.parsers import MultiPartParser, FormParser
-
+import pandas
 # Create your views here.
 
 # Create your views here.
@@ -126,6 +126,10 @@ class LoginView(APIView):
 
         return response
 
+class getcookie(APIView):
+    def get(Self, request):
+        tutorial  = request.COOKIES.get('jwt')  
+        return Response(tutorial)  
 
 
 

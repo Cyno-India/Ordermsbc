@@ -23,8 +23,3 @@ class CustomUserSerializer(serializers.ModelSerializer):
         model = CustomUser
         fields = ['username', 'email' , 'phone' ]
 
-
-# class OrderSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Order
-#         fields = ['orderfile']

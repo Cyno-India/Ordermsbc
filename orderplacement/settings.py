@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
+from tkinter import TRUE
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ydm#60ov%++%%(iid@v2a$1hbfb=n*6b^)+3(i8&i7j(t4f&-s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = TRUE
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['cynoorder.herokuapp.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -41,7 +42,8 @@ INSTALLED_APPS = [
     'orderplacementapi',
     'corsheaders',
     'rest_framework',
-    'order'
+    'order',
+    'upload'
 ]
 
 MIDDLEWARE = [
@@ -57,11 +59,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'orderplacement.urls'
+TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,16 +138,20 @@ AUTH_USER_MODEL = 'orderplacementapi.CustomUser'
 #         'rest_framework.permissions.IsAuthenticated',
 #     ]
 # }
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000','https://cynoorder.herokuapp.com']
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
-# CORS_ORIGIN_WHITELIST = [
-#     'http://localhost:3000',
-# ]
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+]
+
 import os
 # DEBUG_COLLECTSTATIC=1
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
